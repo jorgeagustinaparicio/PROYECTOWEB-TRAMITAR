@@ -11,7 +11,7 @@ import {
   } from "typeorm";
   
   @Entity() 
-  export class Organismo extends BaseEntity {
+  export class Tramite extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
   
@@ -19,7 +19,7 @@ import {
     name: string;
   
     @Column()
-    image_Url: string;
+    link: string;
     
    /*  @OneToMany(() => tramite)
     @JoinColumn()

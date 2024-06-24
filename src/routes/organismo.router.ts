@@ -1,14 +1,14 @@
 import { Router } from "express";
 import {
-  //getOrganismo,
+  getOrganismo,
   createOrganismo,
-  //updateOrganismo,
-  //deleteOrganismo
+  updateOrganismo,
+  deleteOrganismo
 } from "../controllers/organismo.controller";
 const router = Router();
-//router.get("/organismo", getOrganismo);
-router.post("/organismo", createOrganismo);
-//router.put("/organismo/:id", updateOrganismo);
-//router.delete("/organismo/:id", deleteOrganismo);
+router.get("/", getOrganismo);
+router.post("/create", createOrganismo);
+router.put("/update/:id", updateOrganismo);
+router.delete("/delete/:id", deleteOrganismo);
 
 export default router;

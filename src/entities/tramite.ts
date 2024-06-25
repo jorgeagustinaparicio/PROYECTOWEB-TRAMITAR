@@ -12,6 +12,7 @@ import {
 
 @Entity()
 export class Tramite extends BaseEntity {
+  
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -21,7 +22,4 @@ export class Tramite extends BaseEntity {
   @Column()
   link: string;
 
-  /*  @OneToMany(() => tramite)
-   @JoinColumn()
-   profile: tramite; */
 }

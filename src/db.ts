@@ -3,9 +3,6 @@ import { DataSource } from "typeorm";
 import { Organismo } from "./entities/organismo";
 import { Tramite } from "./entities/tramite";
 
-/*import { Profile } from "./entity/Profile";
-import { Photo } from "./entity/Photo"; */
-
 export const AppDataSource = new DataSource({
   type: "mysql",
   host: "localhost",

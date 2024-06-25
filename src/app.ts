@@ -6,6 +6,7 @@ import organismoRoutes from "./routes/organismo.router";
 import tramiteRoutes from "./routes/tramite.router";
 
 const app = express();
+
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());

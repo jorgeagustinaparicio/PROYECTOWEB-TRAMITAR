@@ -1,7 +1,7 @@
 {
   "name": "ejercicio4",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto creado para la catedra programación y servicios web 2024",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",

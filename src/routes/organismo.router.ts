@@ -5,7 +5,9 @@ import {
   updateOrganismo,
   deleteOrganismo
 } from "../controllers/organismo.controller";
+
 const router = Router();
+
 router.get("/", getOrganismo);
 router.post("/create", createOrganismo);
 router.put("/update/:id", updateOrganismo);

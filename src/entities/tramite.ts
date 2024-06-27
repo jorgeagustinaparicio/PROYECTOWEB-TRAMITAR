@@ -20,6 +20,8 @@ import {
   
     @Column()
     link: string;
+                
+   //Descripcion
     
    /*  @OneToMany(() => tramite)
     @JoinColumn()

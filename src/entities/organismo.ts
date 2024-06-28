@@ -23,7 +23,4 @@ export class Organismo extends BaseEntity {
   @Column()
   image_Url: string;
 
-  @OneToOne(() => Tramite)
-  @JoinColumn()
-  tramite: Tramite;
 }

@@ -3,17 +3,13 @@ import {
   Column,
   PrimaryGeneratedColumn,
   BaseEntity,
-  CreateDateColumn,
-  UpdateDateColumn,
-  OneToOne,
-  JoinColumn,
   OneToMany,
 } from "typeorm";
 import { Tramite } from "./tramite";
 
 @Entity()
 export class Organismo extends BaseEntity {
-  
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -23,4 +19,6 @@ export class Organismo extends BaseEntity {
   @Column()
   image_Url: string;
 
+  @OneToMany(() => Tramite, tramite => tramite.organismo)
+  tramites: Tramite[];
 }

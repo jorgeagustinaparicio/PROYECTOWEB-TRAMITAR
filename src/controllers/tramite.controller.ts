@@ -30,7 +30,6 @@ export const updateTramite = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-
     const tramite = await Tramite.findOneBy({ id: parseInt(id) });
 
     if (!tramite) return res.status(404).json({ message: "Tramite not found" });

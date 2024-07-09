@@ -3,11 +3,8 @@ import {
   Column,
   PrimaryGeneratedColumn,
   BaseEntity,
-  CreateDateColumn,
-  UpdateDateColumn,
-  OneToOne,
   JoinColumn,
-  OneToMany,
+  ManyToOne,
 } from "typeorm";
 import { Organismo } from "./organismo";
 
@@ -25,7 +22,7 @@ export class Tramite extends BaseEntity {
   @Column()
   descripcion: string;
 
-  @OneToOne(() => Organismo)
-  @JoinColumn()
+  @ManyToOne(() => Organismo, organismo => organismo.tramites)
+  @JoinColumn({name : 'id_organismo'})
   organismo: Organismo;
 }

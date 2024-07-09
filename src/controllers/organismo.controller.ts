@@ -6,11 +6,33 @@ export const getOrganismos = async (req: Request, res: Response) => {
 
     const organismos = await Organismo.find({
       relations: {
-        tramite: true,
+        tramites: true,
       }
     })
+    let organismosAux: any = [];
+    organismos.forEach(o => {
+      let tramitesAux: any = [];
+      o.tramites.forEach(t => {
+        let tramite = {
+          id: t.id,
+          nombre: t.name,
+          link: t.link,
+          descripcion: t.descripcion
+        }
+        tramitesAux.push(tramite);
+      })
+      let organismo = {
+        id: o.id,
+        nombre: o.name,
+        imagen: o.image_Url,
+        tramites: tramitesAux
+      }
+      organismosAux.push(organismo)
+    })
 
-    return res.json(organismos);
+    return res.json({
+      organismos: organismosAux
+    });
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message })
@@ -36,6 +58,7 @@ export const getOrganismo = async (req: Request, res: Response) => {
     }
   }
 };
+
 //////
 export const createOrganismo = async (req: Request, res: Response) => {
   const { name, image_Url } = req.body;

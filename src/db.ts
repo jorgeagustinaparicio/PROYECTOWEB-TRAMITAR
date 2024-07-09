@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
   host: "localhost",
   port: 3306,
   username: "root",
-  password: "1234",
+  password: "root",
   database: "pysw",
   // logging: true, // muestra peticiones a la bd
   synchronize: true,

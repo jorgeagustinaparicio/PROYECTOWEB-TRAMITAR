@@ -2,11 +2,13 @@ import { Request, Response } from "express";
 import { Tramite } from "../entities/tramite";
 
 export const createTramite = async (req: Request, res: Response) => {
-  const { name, link } = req.body;
+  const { nombre, link, descripcion, id_organismo } = req.body;
   const tramite = new Tramite();
 
-  tramite.name = name;
+  tramite.name = nombre;
   tramite.link = link;
+  tramite.descripcion = descripcion;
+  tramite.organismo = id_organismo;
 
   await tramite.save();
   return res.json(tramite);
@@ -46,13 +48,9 @@ export const updateTramite = async (req: Request, res: Response) => {
 export const deleteTramite = async (req: Request, res: Response) => {
 
   const { id } = req.params;
-
   try {
-
     const result = await Tramite.delete({ id: parseInt(id) });
-
     if (result.affected === 0) return res.status(404).json({ message: "Tramite not found" });
-
     return res.sendStatus(204);
   } catch (error) {
     if (error instanceof Error) {

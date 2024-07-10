@@ -3,7 +3,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   BaseEntity,
-  OneToMany,
+  OneToMany
 } from "typeorm";
 import { Tramite } from "./tramite";
 

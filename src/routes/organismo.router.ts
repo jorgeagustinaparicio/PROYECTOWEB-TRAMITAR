@@ -14,6 +14,3 @@ router.put("/update/:id", updateOrganismo);
 router.delete("/delete/:id", deleteOrganismo);
 
 export default router;
-
-
-

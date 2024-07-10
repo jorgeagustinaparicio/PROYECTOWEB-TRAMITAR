@@ -23,6 +23,6 @@ export class Tramite extends BaseEntity {
   descripcion: string;
 
   @ManyToOne(() => Organismo, organismo => organismo.tramites)
-  @JoinColumn({name : 'id_organismo'})
+  @JoinColumn({ name: 'id_organismo' })
   organismo: Organismo;
 }

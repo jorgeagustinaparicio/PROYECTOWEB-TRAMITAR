@@ -12,4 +12,4 @@ export const AppDataSource = new DataSource({
   // logging: true, // muestra peticiones a la bd
   synchronize: true,
   entities: [Organismo, Tramite],
-});
+}); 

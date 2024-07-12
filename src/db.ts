@@ -7,8 +7,8 @@ export const AppDataSource = new DataSource({
   host: "localhost",
   port: 3306,
   username: "root",
-  password: "1234",
-  database: "pysw",
+  password: "12345",
+  database: "tramitar",
   // logging: true, // muestra peticiones a la bd
   synchronize: true,
   entities: [Organismo, Tramite],

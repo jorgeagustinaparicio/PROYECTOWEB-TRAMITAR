@@ -18,25 +18,26 @@ export const createTramite = async (req: Request, res: Response) => {
 
 export const getTramite = async (req: Request, res: Response) => {
   try {
-
     const tramite = await Tramite.find();
-
     return res.json(tramite);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });
     }
   }
-};
+}
 ///////////
 export const updateTramite = async (req: Request, res: Response) => {
-
   const { id } = req.params;
   try {
     const tramite = await Tramite.findOneBy({ id: parseInt(id) });
-    if (!tramite) return res.status(404).json({ message: "Tramite not found" });
-    console.log(req.body)
-    await Tramite.update({ id: parseInt(id) }, req.body);
+
+    tramite!.name = req.body.name;
+    tramite!.descripcion = req.body.descripcion;
+    tramite!.link = req.body.link;
+    tramite!.organismo = req.body.id_organismo;
+    
+    await tramite!.save();
     return res.sendStatus(204);
   } catch (error) {
     if (error instanceof Error) {
@@ -44,7 +45,7 @@ export const updateTramite = async (req: Request, res: Response) => {
     }
   }
 };
-////////////////
+///////////////////
 export const deleteTramite = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {

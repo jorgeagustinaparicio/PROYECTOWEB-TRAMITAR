@@ -15,5 +15,6 @@ router.post("/create", createTramite);
 router.put("/update/:id", updateTramite);
 router.delete("/delete/:id", deleteTramite);
 
-export default router;
 
+
+export default router;
